@@ -109,6 +109,7 @@ print(f'Seu Lance atual encontrado: {seuLance}')
 
 if(seuLance < lanceAtual):
     print('ganhando!')
+    #voltar para a tela anterior
 
 elif (seuLance > lanceAtual):
     valorDeLance = lanceAtual - 1
@@ -117,5 +118,7 @@ elif (seuLance > lanceAtual):
     print(valorDeLanceStr)
     digitar_elemento('//*[@id="Value"]', valorDeLanceStr )
     clicar_elemento('//*[@id="PerformBidBtn"]', 'Btn efetuar lance')
+
+
 
 
