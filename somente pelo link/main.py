@@ -68,7 +68,8 @@ def main(url, caminho_perfil_nav, log_text, hora_prevista_termino):
     log_text.see(tk.END)
 
     if seuLance < lanceAtual:
-        print(tk.END, f'{datetime.now()} - Ganhando!\n')
+        print(f'Ganhando!\n')
+
     elif seuLance > lanceAtual:
         valorDeLance = lanceAtual - 1
         log_text.insert(tk.END, f'{datetime.now()} - Perdendo, vou fazer um novo lance de {valorDeLance}\n')
@@ -77,7 +78,8 @@ def main(url, caminho_perfil_nav, log_text, hora_prevista_termino):
         digitar_elemento(driver, '//*[@id="Value"]', valorDeLanceStr)
         # Aguardar até que o valor seja digitado antes de clicar no botão
         sleep(2)  # Tempo necessário para garantir que o valor seja digitado corretamente
-        clicar_elemento(driver, '//*[@id="PerformBidBtn"]', 'Btn efetuar lance')
+        print('Aqui eu iria clicar no Btn efetuar lance')
+        #clicar_elemento(driver, '//*[@id="PerformBidBtn"]', 'Btn efetuar lance')
     log_text.see(tk.END)
 
     # Verificar e exibir o tempo restante até o término do leilão a cada 20 segundos
@@ -95,7 +97,8 @@ def main(url, caminho_perfil_nav, log_text, hora_prevista_termino):
         log_text.insert(tk.END, f'{now.strftime("%Y-%m-%d %H:%M:%S")} - Menos de 20 segundos restantes. Efetuando lance...\n')
         log_text.see(tk.END)
         if driver:
-            clicar_elemento(driver, '//*[@id="PerformBidBtn"]', 'Btn efetuar lance')
+            print('Aqui eu iria clicar no Btn efetuar lance')
+            #clicar_elemento(driver, '//*[@id="PerformBidBtn"]', 'Btn efetuar lance')
             log_text.insert(tk.END, f'{now.strftime("%Y-%m-%d %H:%M:%S")} - Lance efetuado.\n')
             log_text.see(tk.END)
         else:
