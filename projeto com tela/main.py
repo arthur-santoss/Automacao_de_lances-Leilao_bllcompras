@@ -117,6 +117,9 @@ def iniciar_automacao():
     
     # Loop principal para verificar lance quando faltar 2 minutos para o fim do leilão
     while True:
+        # Recalcular o tempo restante a cada iteração (antes ficava "parado" no valor inicial)
+        tempo_restante = horario_inicio + timedelta(minutes=duracao_minutos) - datetime.now()
+
         # Pegar valor do "melhor lance atual"
         try:
             element = WebDriverWait(driver, 10).until(
